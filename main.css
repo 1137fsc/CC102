@@ -1,0 +1,41 @@
+body{ background-color: darkslategray; }
+H1{ color:rgb(188, 183, 183) }
+/* 
+https://www.w3schools.com/css/css3_animations.asp
+I have googled how to make text change color, 
+it says to use @keyframes and list the colors below,
+ it will create an animation and scroll through the 
+ colors using the % of the time as the trigger for
+  the color... atleast this is how I understand it 
+  first I have to define the animation, then call it in 
+  the curly braces for the attribute I want to change*/
+
+  
+@keyframes colorChange { /* this defines the animation*/
+   0%{  color: red; } /* this says at zero percent of time the color will be red*/
+   33%{ color: white; } /* at 33% of time I am going to use white. Going to do red white and blue, so 33% should split that into thirds, making even time for each. */
+   66%{ color: blue; } /* 66% will be blue. And I assume since 99% is close enough to 0% that the next interval will cycle back to red.*/
+   99%{ color: red; }
+}  
+/* that defines the animation. Now I will apply it to H2*/
+
+h2 { 
+    font-family: initial;
+    animation: colorChange 2s infinite; /* The animation is called colorChange and I am calling it for 2sec duration and ?looping? for infinite time. Lets see if it works*/
+} /* it kind of works, it goes black, and I dont know why. I dont have time to troubleshoot, need to get the assignment finished.*/
+/* Maybe if I add 99% as red... Last attempt*/
+/*HA! it works. okay back to the assignment. this is fun */
+
+/* Buttons ID... In the PLC world, this is called aliasing */
+#buttonA{
+    background-color: red;
+}
+#buttonB{   
+    background-color: whitesmoke ;
+}
+#buttonC{   
+    background-color: blue ;
+}
+#buttonD{   
+    animation: colorChange 3s infinite; /* going to try this with my button*/
+} /* it changes my font... I think it needs to be background... dont have time to mess with it... Onward! */
