@@ -1,0 +1,52 @@
+<!DOCTYPE html> <!--This is doctyoe is produced by pressing !+tab, gives the basic structure for an html-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+     <!-- I am setting up the stle for my game here. Going to do black backgorund with white text -->
+     
+    <Style>
+        body{
+            font-size: 14px; /* average size text, will adjust */
+            text-align: center; /* I want to keep my text in the center*/
+            background-color: rgb(86, 83, 83); /* I want to do a dark theme*/
+            padding: 30px; /* gives me some room around the body*/
+        }
+        button{ 
+            background-color: darkgray;
+            padding: 10px 10px; /* 10 pixles in the x and 20 in the y for padding, assuming this is x and y coords*/
+            font-size: 14px; /* same as above*/
+            margin: 10px; /* seperate from padding, this is page margins. Interesting fact, margins came from providing extra space at the edges of 
+                                                                        papers so that when the mice chewed the edges, the writing was saved! For 
+                                                                        some strange reason, we still use it. This is my margin, and I'll probably 
+                                                                        adjust it. */
+            cursor: pointer; /* this turns my cursor into a hand!*/
+            border-radius: 20px; /* trying to make the buttons look less blocky */
+        }
+        #gameResult{ /* this is where my game results will populate, at least thats what I think I am doing */
+            margin: 20px;
+            font-size: 18px;
+            color: goldenrod;
+        }
+        h1{
+            color: cadetblue;
+        }
+        p{
+            color: darkcyan;
+        }
+    </Style>
+</head>
+
+<body>
+    <h1> ROCK PAPER SCISSORS</h1> <!-- This is the header or title of my game-->
+    <p> Throw those hands!</p> <!-- prompts the player to chose-->
+    <button onclick="playRPS('ROCK')">ROCK</button> <!-- this is my rock... okay not really its a button-->
+    <button onclick="playRPS('PAPER')">PAPER</button> <!-- button for paper selection-->
+    <button onclick="playRPS('SCISSORS')">SCISSORS</button> <!-- the scissors button-->
+    <!-- I am going to use the div thing you showed us and I will use it to put the result using the .innnerHTML from the assignment-->
+    <div id="gameResult"></div>
+    <script  src="script.js"></script> <!-- declare my script that the html will use-->
+</body>
+
+</html>
