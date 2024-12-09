@@ -1,4 +1,3 @@
-
 /* so my first attempt fizzeled out into confusion. instead I am taking the string, 
 breaking it up with split, reversing the order, and rejoining it. This 
 idea came from the twos compliment using integers to represent negative numbers. I
@@ -7,6 +6,32 @@ characters, if they reverse and are true, then its a palindrome!*/
 const checkButton = document.getElementById("checkButton"); //so I am getting the element by its ID from the document
 const palindromeInput = document.getElementById("palindromeInput");
 const resultOutput = document.getElementById("resultOutput")
+
+
+function checkInputField() {
+    if (palindromeInput.value.trim().length === 0) {
+        resultOutput.textContent = "Waiting for your entry...";
+    } else {
+        resultOutput.textContent = ""; // Clear message if input is provided
+    }
+}
+//okay I am just going to use what I know to create a loop, an incrementing timer. This is eating my lunch.
+//there realy isnt a need for a loop in my code, but I have gone through hell adding one in. 
+let counterPreset = 10;
+for (let counter = 0; counter < counterPreset; counter++) { //set counter to zero, if counter is less than the max count, increment counter
+    setTimeout( function() {  //https://www.w3schools.com/js/js_timing.asp
+        console.log(`60 sec: ${counter}`);
+        if (palindromeInput.value.trim().length === 0) {
+            resultOutput.textContent = "Waiting for your entry...";
+        }// else {
+             //   resultOutput.textContent = ""; //clear if text is entered
+       // }
+        if (counter === counterPreset - 1) { //if the counter hits max value
+            resultOutput.textContent = "you took longer than 10 minutes, please refresh the browser";
+        }
+    }, counter * 60000); //  60sec timer
+}
+
 
 /* now I want to check for my 'event'. my event is just going to be
 a button click. when I looked up events I found 'event listener'... 
@@ -39,9 +64,13 @@ const isPalindrome = sanitizedInput === rejoinString
     // else if it is not, say "this is not a palindrome, try again"
   if (/[^a-zA-Z\s]/.test(inputText)) { //so if not alpha upper/lower, test inputText
          resultOutput.textContent = "Please use letters only!";
+      } else if (sanitizedInput.length === 1) { 
+         resultOutput.textContent = "Dont get cute, use a whole word :)";
+      } else if (sanitizedInput.length === 2) { 
+            resultOutput.textContent = "c'mon... use a whole word";
       } else if (sanitizedInput.length === 0) { //else if there is no text
-        resultOutput.textContent = "Please enter some text.";
-      } else if (isPalindrome) { //if it is actually a palindrome
+            resultOutput.textContent = "Please enter some text.";
+      }  else if (isPalindrome) { //if it is actually a palindrome
         resultOutput.textContent = `"${inputText}" This is a palindrome, good job!`;     // https://www.w3schools.com/js/js_string_templates.asp
       } else { //and if its not
         resultOutput.textContent = `"${inputText}" This is not a palindrome, try again`;
