@@ -113,7 +113,7 @@ function checkZip() { //basically the same as above, just with different conditi
     if (zipCode.value === "00000"){
         badZip.textContent = "Invalid ZIP code. 00000 is not a zip code"
      } else if (zipTotalCount  && zipNumbersOnly) {
-        badZip.textContent = `"Your super secrete message is: Potato"` //creative, I know
+        badZip.textContent = `"Your super seceret message is: Potato"` //creative, I know
      } else if (!zipTotalCount || !zipNumbersOnly) {
         badZip.textContent = "Invalid ZIP code. Please enter 5 digits.";
         return;
