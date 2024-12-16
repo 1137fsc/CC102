@@ -1,0 +1,151 @@
+/* This is for assignment 2.1.
+ I have already created my Main.css earlier, I will 
+ add the new pieces of code to this .css and keep
+ the old stuff in there. 
+*/
+/*Declaration block::
+    Selector{
+        Property1: Value1
+        Property2: Value2
+        Property3: Value3
+    }
+*/
+
+
+
+body{ 
+    background-color: darkslategray;
+    color: ghostwhite;  
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px  ;
+   
+    
+}
+.header-box {
+    background-color: rgb(22, 37, 37);
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 20px auto;
+    text-align: center;
+    width: fit-content;
+    box-shadow: 5px 5px 10px gray; 
+}
+.instructions {
+    background-color: rgb(78, 140, 140);
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 20px auto;
+    text-align: center;
+    width: fit-content;
+    box-shadow: 5px 5px 10px gray; 
+   
+}
+nav{
+    height: 6000px;
+    width: 200px;
+    float: left;
+    padding: 5px;
+    line-height: 30px;
+    
+}
+
+footer{
+    text-align: center;
+    margin-right: 200px;
+    color: rgb(248, 248, 255);
+    background-color: rgb(26, 43, 43);
+}
+
+#doggoImage{
+    margin-left: 150px;
+    margin-right: 200px;
+    height: 300px;
+    width: auto;
+}
+
+H1{ 
+    text-align: center;
+    color:rgb(188, 183, 183);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+/* 
+https://www.w3schools.com/css/css3_animations.asp
+I have googled how to make text change color, 
+it says to use @keyframes and list the colors below,
+ it will create an animation and scroll through the 
+ colors using the % of the time as the trigger for
+  the color... atleast this is how I understand it 
+  first I have to define the animation, then call it in 
+  the curly braces for the attribute I want to change*/
+
+  
+@keyframes colorChange { /* this defines the animation*/
+   0%{  color: red; } /* this says at zero percent of time the color will be red*/
+   33%{ color: white; } /* at 33% of time I am going to use white. Going to do red white and blue, so 33% should split that into thirds, making even time for each. */
+   66%{ color: blue; } /* 66% will be blue. And I assume since 99% is close enough to 0% that the next interval will cycle back to red.*/
+   99%{ color: red; }
+}  
+/* that defines the animation. Now I will apply it to H2*/
+
+h2 { 
+    text-align: center;
+    font-family: initial;
+    animation: colorChange 2s infinite; /* The animation is called colorChange and I am calling it for 2sec duration and ?looping? for infinite time. Lets see if it works*/
+} /* it kind of works, it goes black, and I dont know why. I dont have time to troubleshoot, need to get the assignment finished.*/
+/* Maybe if I add 99% as red... Last attempt*/
+/*HA! it works. okay back to the assignment. this is fun */
+h3 {
+    text-align: center;
+    color: black
+}
+p{
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+/* Buttons ID... In the PLC world, this is called aliasing */
+#buttonA{
+    background-color: green;
+    color:rgb(248, 248, 255);
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    border-color: black;
+    
+}
+#buttonA:disabled { /* so I can edit just the class of the button to change its css when disabled */
+    background-color: gray; 
+    color: lightgray;        
+    cursor: not-allowed;   /*https://www.w3schools.com/cssref/pr_class_cursor.php*/   
+    opacity: 0.6;  /* this is causing the button to apear to be on top of the image... like the Z index has changed */
+   /* z-index: -1;       /* send the button to the back https://www.w3schools.com/cssref/pr_pos_z-index.php */
+   /* position: relative; /* Required for z-index to work */          
+}
+#buttonB{   
+    background-color: red;
+    color: rgb(5, 4, 4);
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    border-color: black;
+}
+#buttonB:disabled { /* so I can edit just the class of the button to change its css when disabled*/
+    background-color: gray; 
+    color: lightgray;        
+    cursor: not-allowed;   /*https://www.w3schools.com/cssref/pr_class_cursor.php*/   
+    opacity: 0.6;  /* this is causing the button to apear to be on top of the image... like the Z index has changed */
+   /* z-index: -1;       /* send the button to the back https://www.w3schools.com/cssref/pr_pos_z-index.php */
+    /* position: relative; /* Required for z-index to work */                    
+}
+#buttonC{   
+    background-color: blue ;
+    color: white;
+}
+#buttonD{  
+    background-color: rgb(78, 76, 76); 
+    animation: colorChange 3s infinite; /* going to try this with my button*/
+} /* it changes my font... I think it needs to be background... dont have time to mess with it... Onward! */
