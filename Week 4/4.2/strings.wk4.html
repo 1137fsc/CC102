@@ -1,0 +1,88 @@
+<!-- Jonathan Anderson
+  HTML page "strings". 
+ Here I will create a user input visual and an output visual.
+ If time provides, I would like to animate the text, give an explaination 
+ of what a palindrome is, and imbed a youtube video that just came out on palindromes -->
+
+ <!-- I created the html setup by using the shortcut "!+enter" -->
+ <!DOCTYPE html>  
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Validator</title>
+    <link rel="stylesheet" href="strings.wk4.css">
+ </head>
+ <!-- in the body, I want my header, subheader with some explaination of what is to come
+  then I want my embedded video. I think youtube makes this easy, going to try to get the video in here.
+  Also I will use the CSS for the formatting -->
+ <body>
+    <!-- THIS IS MY AUDIO FOR WEEK 4 -->
+     <!-- THIS IS MY AUDIO FOR WEEK 4 -->
+      <!-- THIS IS MY AUDIO FOR WEEK 4 -->
+       <!-- THIS IS MY AUDIO FOR WEEK 4 -->
+    <audio id="backgroundSpeech" autoplay loop>
+        <source src="The Purpose of Productive Work.mp3" type="audio/mpeg">
+        
+    </audio>
+    <p>This audio is a speech about productiveness from Atlas Shrugged, read by AI. <br/> Adjust your volume as needed.</p>
+    <button id="playButton">Play</button>
+    <button id="pauseButton">Pause</button> <br/> 
+    <p>Speech Progress Bar</p> 
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress -->
+    <progress id="audioProgress" value="0" max="100"></progress> <br/> <br/>
+    <!-- THIS IS MY AUDIO FOR WEEK 4 -->
+     <!-- THIS IS MY AUDIO FOR WEEK 4 -->
+      <!-- THIS IS MY AUDIO FOR WEEK 4 -->
+       <!-- THIS IS MY AUDIO FOR WEEK 4 -->
+
+
+
+   <div class="container"> <!-- https://www.w3schools.com/css/tryit.asp?filename=trycss_website_layout_navbar -->
+      <div class="header-container"> 
+        <h1>Palindrome Validator</h1>
+        <h3>Watch Vsauce explain palindromes below. <br/> Then enter your word to check for a palindrome!</h3>
+   </div>
+    <!-- Well that was easy. I went to youtube and clicked share, selected <embed> and it gave me the code. I hope this is acceptable, it works! -->
+      <iframe 
+         width="500"
+         height="250" 
+         src="https://www.youtube.com/embed/65_8t1OEZSc?si=yY4kLX67UuPvznfc" 
+         title="YouTube video player"
+         frameborder="0" 
+         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+         referrerpolicy="strict-origin-when-cross-origin"
+         allowfullscreen></iframe>
+    <!-- this is where my input box will go. in my css, I will try to make the box apear rounded with a shaddow to give a modern feel and look 
+     used this https://www.w3schools.com/html/html_form_input_types.asp to find out how to create the input type text, this also has some for the input type, which I think is a self filter. I am reading more into this-->
+     <form>
+      <br/>
+        <label for="palindromeInput">Enter your word or phrase (just letters and spaces!) and click the "Check" button to test for a palindrome:</label><br /> <br />
+        <input type="text" id="palindromeInput" name="palindromeInput"><br /> <br /><!-- I had to look up why the name and ID are the same, because it seems strange to tag two things with the same identifier, but it looks like id is for css/js and name is for form subimission via a server. Keeping them the same is fine for this, but noteworthy later -->
+        <!-- <input type="submit" value="Submit"> I commented this out because it is more for form submission and I need to use a button click as an event. seems this will reset the page and do things that I will have to stop or move away from default behavior.
+          I dont need to submit a form to a server, I need a button to drive an event.-->
+        <button type="button" id="checkButton">Check</button>
+        <input type="reset" value="Reset"> <br><br>
+        <label for="resultOutput">Result:</label>
+        <output id="resultOutput" name="resultOutput">Waiting for input...</output> <br /> <br />
+    <!-- this is for 3.2 -->
+    <div class="week3">
+      <h3>Enter First Name</h3>
+        <input type="text" id="firstName" name="firstName"><br /> <br />
+      <h3> Enter Last Name</h3>
+        <input type="text" id="lastName" name="lastName"><br /> <br />
+        <button type="button" id="validateButton" onclick = "Validate()">Name Test</button> <br><br>       
+        <h3>Name Checker Output</h3>
+        <output id="nameOver20" name="nameOver20"></output> <br /> <br /><br />
+        <h3>Enter Zipcode</h3>
+        <input type="text" id="zipCode" name="zipCode"><br /> <br />
+        <button type="button" id="validateZipButton" onclick = "ValidateZip()">Zipcode Test</button> <br><br>
+        <h3>Zipcode Results</h3>
+        <output id="badZip" name="badZip"></output> <br /> <br />
+      </div>
+      </form>
+    <!-- call my script -->
+     <script src="strings.wk4.js"></script>
+
+</body>
+ </html>
